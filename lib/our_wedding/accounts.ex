@@ -7,9 +7,9 @@ defmodule OurWedding.Accounts do
 
   def list_users do
     [
-      %User{id: "1", name: "José", username: "josevalim"},
-      %User{id: "2", name: "Bruce", username: "redrapids"},
-      %User{id: "3", name: "Chris", username: "chrismccord"}
+      %User{id: "1", first_name: "José",  last_name: "Valim"},
+      %User{id: "2", first_name: "Bruce", last_name: "Redrapids"},
+      %User{id: "3", first_name: "Chris", last_name: "McCord"}
     ]
   end
 
