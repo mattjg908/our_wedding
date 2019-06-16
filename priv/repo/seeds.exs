@@ -1,11 +1,9 @@
-# Script for populating the database. You can run it as:
-#
-#     mix run priv/repo/seeds.exs
-#
-# Inside the script, you can read and write to any of your
-# repositories directly:
-#
-#     OurWedding.Repo.insert!(%OurWedding.SomeSchema{})
-#
-# We recommend using the bang functions (`insert!`, `update!`
-# and so on) as they will fail if something goes wrong.
+alias OurWedding.Accounts
+
+for user <- [
+  %{first_name: "José",  last_name: "Valim"},
+  %{first_name: "Bruce", last_name: "Redrapids", telephone_number: 1234567890},
+  %{first_name: "Chris", last_name: "McCord"}
+] do
+  Accounts.create_user(user)
+end
