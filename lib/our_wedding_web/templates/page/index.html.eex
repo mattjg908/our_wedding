@@ -1,5 +1,5 @@
 <section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
+  <h1><%= gettext "Welcome to %{name}!", name: "Poland" %></h1>
   <p>We look forward to seeing you at our Polish wedding!</p>
   <p>Czekamy na Was na naszym polskim weselu!</p>
 </section>
