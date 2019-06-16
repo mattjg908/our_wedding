@@ -2,7 +2,7 @@ defmodule OurWeddingWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :our_wedding
 
   socket "/socket", OurWeddingWeb.UserSocket,
-    websocket: true,
+    websocket: [timeout: 45_000],
     longpoll: false
 
   # Serve at "/" the static files from "priv/static" directory.
