@@ -14,7 +14,5 @@ config :our_wedding, OurWeddingWeb.Endpoint,
 # Configure your database
 config :our_wedding, OurWedding.Repo,
   ssl: true,
-  username: System.get_env("DATABASE_USERNAME"),
-  password: System.get_env("DATABASE_PASSWORD"),
-  database: "our_wedding_heroku_prod",
+  url: System.get_env("DATABASE_URL"),
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10")
