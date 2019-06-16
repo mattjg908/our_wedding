@@ -3,9 +3,7 @@ defmodule OurWeddingWeb.UserView do
 
   alias OurWedding.Accounts
 
-  def first_name(%Accounts.User{name: name}) do
-    name
-    |> String.split(" ")
-    |> Enum.at(0)
+  def full_name(%Accounts.User{first_name: first_name, last_name: last_name}) do
+    String.trim("#{first_name} #{last_name}")
   end
 end

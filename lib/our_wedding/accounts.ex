@@ -3,14 +3,18 @@ defmodule OurWedding.Accounts do
   The Accounts context.
   """
 
+  alias OurWedding.Repo
   alias OurWedding.Accounts.User
 
+  def create_user(attrs \\ %{}) do
+    %User{}
+    |> User.changeset(attrs)
+    |> Repo.insert!()
+  end
+
   def list_users do
-    [
-      %User{id: "1", name: "José", username: "josevalim"},
-      %User{id: "2", name: "Bruce", username: "redrapids"},
-      %User{id: "3", name: "Chris", username: "chrismccord"}
-    ]
+    User
+    |> Repo.all()
   end
 
   def get_user(id) do
