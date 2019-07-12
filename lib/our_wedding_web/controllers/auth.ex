@@ -1,4 +1,4 @@
-defmodule OurWedding.Auth do
+defmodule OurWeddingWeb.Auth do
   import Plug.Conn
 
   def init(opts), do: opts
