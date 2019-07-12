@@ -2,6 +2,8 @@ defmodule OurWedding.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias OurWedding.Accounts.Credential
+
   schema "users" do
     field :first_name, :string
     field :last_name, :string
