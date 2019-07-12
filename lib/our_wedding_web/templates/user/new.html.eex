@@ -8,12 +8,16 @@
   <% end %>
 
   <div>
-    <%= text_input f, :first_name, placeholder: "Name" %>
+    <%= text_input f, :first_name, placeholder: "First Name" %>
     <%= error_tag f, :first_name %>
   </div>
   <div>
-    <%= text_input f, :last_name, placeholder: "Username" %>
+    <%= text_input f, :last_name, placeholder: "Last Name" %>
     <%= error_tag f, :last_name %>
+  </div>
+  <div>
+    <%= text_input f, :telephone_number, placeholder: "Telephone Number" %>
+    <%= error_tag f, :telephone_number %>
   </div>
   <div>
     <%= inputs_for f, :credential, fn cf -> %>
