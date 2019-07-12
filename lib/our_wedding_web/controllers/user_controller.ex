@@ -23,7 +23,7 @@ defmodule OurWeddingWeb.UserController do
     case Accounts.register_user(user_params) do
       {:ok, user} ->
         conn
-        |> put_flash(:info, "#{user.name} created!")
+        |> put_flash(:info, "#{user.first_name} #{user.last_name} created!")
         |> redirect(to: Routes.user_path(conn, :index))
 
       {:error, %Ecto.Changeset{} = changeset} ->
