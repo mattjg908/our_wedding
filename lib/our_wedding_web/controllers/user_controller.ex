@@ -30,7 +30,7 @@ defmodule OurWeddingWeb.UserController do
       {:ok, user} ->
         conn
         |> OurWeddingWeb.Auth.login(user)
-        |> put_flash(:info, "#{user.name} created!")
+        |> put_flash(:info, "#{user.first_name} #{user.last_name} created!")
         |> redirect(to: Routes.user_path(conn, :index))
 
       {:error, %Ecto.Changeset{} = changeset} ->

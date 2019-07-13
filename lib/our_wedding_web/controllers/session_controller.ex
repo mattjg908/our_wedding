@@ -5,21 +5,23 @@ defmodule OurWeddingWeb.SessionController do
     render(conn, "new.html")
   end
 
-  def create(
-    conn,
-    %{"session" => %{"username" => username, "password" => pass}}
-  ) do
-    case OurWedding.Accounts.authenticate_by_username_and_pass(username, pass) do
-      {:ok, user} ->
+  def create(conn, %{"session" => %{"email" => email, "password" => pass}}) do
+    case OurWeddingWeb.Auth.login_by_email_and_pass(conn, email, pass) do
+      {:ok, conn} ->
         conn
-        |> OurWeddingWeb.Auth.login(user)
         |> put_flash(:info, "Welcome back!")
         |> redirect(to: Routes.page_path(conn, :index))
 
-      {:error, _reason} ->
+      {:error, _reason, conn} ->
         conn
         |> put_flash(:error, "Invalid username/password combination")
         |> render("new.html")
     end
+  end
+
+  def delete(conn, _) do
+    conn
+    |> OurWeddingWeb.Auth.logout()
+    |> redirect(to: Routes.page_path(conn, :index))
   end
 end
