@@ -4,11 +4,15 @@ defmodule OurWeddingWeb.UserController do
   alias OurWedding.Accounts
   alias OurWedding.Accounts.User
 
-  plug :authenticate when action in [:index, :show]
-
   def index(conn, _params) do
-    users = Accounts.list_users()
-    render(conn, "index.html", users: users)
+    case authenticate(conn) do
+      %Plug.Conn{halted: true} = conn ->
+        conn
+
+      conn ->
+        users = Accounts.list_users()
+        render(conn, "index.html", users: users)
+    end
   end
 
   def show(conn, %{"id" => id}) do
@@ -26,7 +30,7 @@ defmodule OurWeddingWeb.UserController do
       {:ok, user} ->
         conn
         |> OurWeddingWeb.Auth.login(user)
-        |> put_flash(:info, "#{user.name} created!")
+        |> put_flash(:info, "#{user.first_name} #{user.last_name} created!")
         |> redirect(to: Routes.user_path(conn, :index))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -34,7 +38,7 @@ defmodule OurWeddingWeb.UserController do
     end
   end
 
-  defp authenticate(conn, _opts) do
+  defp authenticate(conn) do
     if conn.assigns.current_user do
       conn
     else
