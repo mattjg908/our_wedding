@@ -1,0 +1,1 @@
+<strong><%= "#{@user.first_name} #{@user.last_name}" %></strong> (<%= @user.id %>)
