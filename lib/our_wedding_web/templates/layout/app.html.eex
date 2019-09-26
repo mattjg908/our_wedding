@@ -24,6 +24,7 @@
         <a href="/" class="hearts">
           <img src="<%= Routes.static_path(@conn, "/images/hearts.png") %>" alt="Hearts Image"/>
         </a>
+        <a href="/wedding_arrival">My suggestions for getting to the wedding</a>
         <a href="/getting_around">Getting Around in Poland</a>
         <a href="/calendar">Calendar</a>
       </section>
