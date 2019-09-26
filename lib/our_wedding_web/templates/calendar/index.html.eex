@@ -1,0 +1,18 @@
+<h1>Events</h1>
+<p>
+  I'd like to help get everyone get from the aiport to Lublin. Also, when it's
+  time to leave Poland, I want to help you get back to the airport so you don't 
+  feel stressed out and more importantly, so you don't miss your flight.
+</p>
+
+<p>
+  So, here you can add your flight information if you'd like. This will assist
+  me in co-ordinating with anyone else who may be arriving at the same time.
+</p>
+
+<p>
+  Lastly, I will be updating this calendar with the name, location amd address
+  of the church, reception veneue, etc.. I hope that if for some reason you get
+  lost, this calendar will help you know where to be and when.
+</p>
+<div id="calendar" style="width:600px"></div>

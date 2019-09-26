@@ -19,6 +19,7 @@ defmodule OurWeddingWeb.Router do
 
     get "/", PageController, :index
     get "/getting_around", GettingAroundController, :index
+    get "/calendar", CalendarController, :index
     resources "/users", UserController, only: [:index, :show, :new, :create]
     resources "/sessions", SessionController, only: [:new, :create, :delete]
   end
