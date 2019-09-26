@@ -1,6 +1,7 @@
 /* This file is for your main application css. */
 
 @import "./phoenix.css";
+/* TODO, don't use relative paths */
 @import '../../node_modules/@fullcalendar/core/main.css';
 @import '../../node_modules/@fullcalendar/daygrid/main.css';
 @import '../../node_modules/@fullcalendar/timegrid/main.css';
